@@ -64,11 +64,11 @@
 				DDC64E2827BE444A00B66377 /* SceneDelegate.swift */,
 				DDC64E2A27BE444A00B66377 /* ViewController.swift */,
 				DDC64E3A27BE4BC000B66377 /* SecondViewController.swift */,
+				DDC64E3C27BE4BC900B66377 /* ThirdViewController.swift */,
 				DDC64E2C27BE444A00B66377 /* Main.storyboard */,
 				DDC64E2F27BE444B00B66377 /* Assets.xcassets */,
 				DDC64E3127BE444B00B66377 /* LaunchScreen.storyboard */,
 				DDC64E3427BE444B00B66377 /* Info.plist */,
-				DDC64E3C27BE4BC900B66377 /* ThirdViewController.swift */,
 			);
 			path = duble;
 			sourceTree = "<group>";

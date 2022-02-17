@@ -50,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="832" y="64"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Title-->
         <scene sceneID="pNl-7N-5bn">
             <objects>
                 <viewController id="1vO-Dj-0qc" customClass="SecondViewController" customModule="duble" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MCT-f9-hpI" kind="presentation" identifier="Edit" id="5En-mC-7ia"/>
+                                    <segue destination="MCT-f9-hpI" kind="presentation" identifier="" id="5En-mC-7ia"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,7 +84,13 @@
                             <constraint firstItem="zZ0-dm-do5" firstAttribute="centerX" secondItem="eCo-Ae-eFg" secondAttribute="centerX" id="psh-yH-VQI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vvt-Cf-9i9"/>
+                    <navigationItem key="navigationItem" title="Title" id="sXb-1g-isH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="TcJ-jb-zlW">
+                            <connections>
+                                <segue destination="MCT-f9-hpI" kind="presentation" identifier="edit" id="yUg-qj-39y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gge-Tl-sby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,17 +119,35 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeVC" destination="MCT-f9-hpI" eventType="touchUpInside" id="hcw-mE-eCU"/>
+                                    <segue destination="44p-Oj-cLj" kind="unwind" unwindAction="unwindSegueWithSegue:" id="kuS-Io-3Yy"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Tv-IL-LeX">
+                                <rect key="frame" x="107" y="245" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="lA6-Bs-nm1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k60-8c-1Pf"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="EXL-b4-LyW" firstAttribute="centerX" secondItem="iqb-4K-Tbo" secondAttribute="centerX" id="8dO-1z-Vv0"/>
+                            <constraint firstItem="6Tv-IL-LeX" firstAttribute="top" secondItem="k60-8c-1Pf" secondAttribute="top" constant="245" id="DN1-d2-dy3"/>
                             <constraint firstItem="EXL-b4-LyW" firstAttribute="centerY" secondItem="iqb-4K-Tbo" secondAttribute="centerY" id="T0h-05-ZyC"/>
+                            <constraint firstItem="6Tv-IL-LeX" firstAttribute="centerX" secondItem="iqb-4K-Tbo" secondAttribute="centerX" id="jrh-Oc-iiW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="6Tv-IL-LeX" id="eMY-kv-EDq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQm-7E-Ry4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="44p-Oj-cLj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2417" y="64"/>
         </scene>
@@ -146,6 +170,9 @@
             <point key="canvasLocation" x="-26.086956521739133" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yUg-qj-39y"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

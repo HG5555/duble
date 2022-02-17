@@ -8,22 +8,25 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "edit" {
+            let thirdVC = segue.destination as! ThirdViewController
+            thirdVC.text = segue.identifier
+        }
     }
-    */
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue){
+        let thirdVC = segue.source as! ThirdViewController
+        title = thirdVC.text
+    }
 
+    deinit {
+        print("Second del \(Int.random(in: 1...10))")
+    }
 }

@@ -9,21 +9,23 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    var text: String!
+
+    @IBOutlet var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        textField.text = text
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func closeVC() {
+        text = textField.text
     }
-    */
-
+    
+    
+    
+    deinit {
+        print("Third del \(Int.random(in: 1...10))")
+    }
 }
